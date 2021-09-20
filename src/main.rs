@@ -2,6 +2,7 @@ mod days;
 use days::{one, two, three};
 use std::fs::read_to_string;
 use std::time::Instant;
+use crate::days::four;
 
 fn fmt_time(ms: f64) -> String {
     if ms <= 1.0 {
@@ -65,5 +66,18 @@ fn main() {
     let three_b_end_time = three_b_start_time.elapsed().as_secs_f64() * 1000.0;
 
     println!("Day 3:\n A: {} in {}\n B: {} in {}", three_a_result, fmt_time(three_a_end_time), three_b_result, fmt_time(three_b_end_time));
+
+
+    let four_input = read_to_string("src/inputs/four.txt").expect("Konnte Eingabe für Tag 4 nicht lesen");
+
+    let four_a_start_time = Instant::now();
+    let four_a_result = four::a(&four_input);
+    let four_a_end_time = four_a_start_time.elapsed().as_secs_f64() * 1000.0;
+
+    let four_b_start_time = Instant::now();
+    let four_b_result = four::b(&four_input);
+    let four_b_end_time = four_b_start_time.elapsed().as_secs_f64() * 1000.0;
+
+    println!("Day 4:\n A: {} in {}\n B: {} in {}", four_a_result, fmt_time(four_a_end_time), four_b_result, fmt_time(four_b_end_time));
 
 }
