@@ -1,7 +1,6 @@
 mod days;
-use days::one;
+use days::{one, two, three};
 use std::fs::read_to_string;
-use crate::days::two;
 use std::time::Instant;
 
 fn fmt_time(ms: f64) -> String {
@@ -46,13 +45,25 @@ fn main() {
 
     let two_a_start_time = Instant::now();
     let two_a_result = two::a(&two_input);
-    let two_a_end_time = two_a_start_time.elapsed().as_secs_f64() * 2000.0;
+    let two_a_end_time = two_a_start_time.elapsed().as_secs_f64() * 1000.0;
 
     let two_b_start_time = Instant::now();
     let two_b_result = two::b(&two_input);
-    let two_b_end_time = two_b_start_time.elapsed().as_secs_f64() * 2000.0;
+    let two_b_end_time = two_b_start_time.elapsed().as_secs_f64() * 1000.0;
 
     println!("Day 2:\n A: {} in {}\n B: {} in {}", two_a_result, fmt_time(two_a_end_time), two_b_result, fmt_time(two_b_end_time));
 
+
+    let three_input = read_to_string("src/inputs/three.txt").expect("Konnte Eingabe für Tag 3 nicht lesen");
+
+    let three_a_start_time = Instant::now();
+    let three_a_result = three::a(&three_input);
+    let three_a_end_time = three_a_start_time.elapsed().as_secs_f64() * 1000.0;
+
+    let three_b_start_time = Instant::now();
+    let three_b_result = three::b(&three_input);
+    let three_b_end_time = three_b_start_time.elapsed().as_secs_f64() * 1000.0;
+
+    println!("Day 3:\n A: {} in {}\n B: {} in {}", three_a_result, fmt_time(three_a_end_time), three_b_result, fmt_time(three_b_end_time));
 
 }
