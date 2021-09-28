@@ -1,4 +1,4 @@
-pub(crate) mod one;
-pub(crate) mod two;
-pub(crate) mod three;
-pub(crate) mod four;
+pub(crate) mod day_01;
+pub(crate) mod day_02;
+pub(crate) mod day_03;
+pub(crate) mod day_04;
